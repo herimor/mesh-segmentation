@@ -5,6 +5,7 @@ class Config:
     # save_path = Path('/Users/herimor/Documents/Github/mesh-segmentation')
     save_path = Path('/Users/herimor/Documents/3D_mesh_segmentation')
     proc_category = 'human'
+    num_proc = 4
     excluded_set = set(range(261, 281))
     net_config = {
         'lr': 1e-3,

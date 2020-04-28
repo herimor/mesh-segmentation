@@ -3,6 +3,7 @@ import numpy as np
 from tqdm import tqdm
 from pathlib import PosixPath
 
+from config import Config
 from utils import parse_obj, plot_mesh, time_wrapper
 from surface_descriptors.geo_distances import calc_geodesic_distances
 from surface_descriptors import spin_images
@@ -31,7 +32,7 @@ class Mesh:
         """
 
         self.save_path = save_path
-        self._num_proc = num_proc
+        self._num_proc = Config.num_proc
         self._verbose = verbose
         self._mesh_name = obj_path.name.split('.')[0]
 
