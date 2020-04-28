@@ -8,7 +8,7 @@ cd mesh-segmentation
 pip install -r requirements.txt
 conda install -c conda-forge igl 
 
-# Setup save_path and proc_category parameters in Config.py file
+# Setup save_path, data_path and proc_category parameters in Config.py file
 # Also setup num_proc parameter (used for multiprocessing calculation of surface descriptors)
 ```
 

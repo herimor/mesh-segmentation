@@ -19,7 +19,6 @@ class Mesh:
                  seg_path: PosixPath = None,
                  descr_path: PosixPath = None,
                  save_path: PosixPath = None,
-                 num_proc: int = 4,
                  verbose: bool = True):
         """
         Parameters:

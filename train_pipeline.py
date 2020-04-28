@@ -43,10 +43,10 @@ def load_data(category: str = 'chair', verbose: bool = True):
 
     for mesh_num in range(*Config.categories_indices[category]):
 
-        labels_path = Config.save_path / f'data/seg/init/{mesh_num}.seg'
+        labels_path = Config.data_path / f'seg/init/{mesh_num}.seg'
         assert labels_path.exists(), f'Download face labels for {category} category'
 
-        with open(Config.save_path / f'data/seg/init/{mesh_num}.seg') as f:
+        with open(Config.data_path / f'seg/init/{mesh_num}.seg') as f:
             labels = np.array(list(map(int, f.readlines())))
         if len(face_labels) > 0:
             labels += max(face_labels[-1]) + 1

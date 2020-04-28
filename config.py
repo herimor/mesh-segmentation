@@ -3,6 +3,7 @@ from pathlib import Path
 
 class Config:
     save_path = Path('/path/to/mesh-segmentation')
+    data_path = Path('/path/to/data')
     proc_category = 'human'
     num_proc = 4
     excluded_set = set(range(261, 281))

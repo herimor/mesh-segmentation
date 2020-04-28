@@ -8,7 +8,7 @@ from sklearn.metrics import homogeneity_completeness_v_measure, adjusted_rand_sc
 
 
 def calculate_category_scores(category, num_meshes=20, num_metrics=4, save=True, verbose=True):
-    labels_path = Config.save_path / 'data/seg/init'
+    labels_path = Config.data_path / 'seg/init'
     assert labels_path.exists(), f'Download face labels for {category} category'
 
     with open(labels_path / f'{Config.categories_indices[category][0]}.seg', 'r') as f:
@@ -24,7 +24,7 @@ def calculate_category_scores(category, num_meshes=20, num_metrics=4, save=True,
         embeddings = np.load(f'data/net_embed/{mesh_num}.npy')
 
         *_, faces, labels = parse_obj(obj_path=Config.save_path / f'data/obj/{mesh_num}.obj',
-                                      seg_path=Config.save_path / f'data/seg/init/{mesh_num}.seg')
+                                      seg_path=Config.data_path / f'seg/init/{mesh_num}.seg')
         mesh, conn_mat = calc_mesh(faces)
 
         agl_clust = AgglomerativeClustering(n_clusters=len(np.unique(labels)), connectivity=conn_mat)
