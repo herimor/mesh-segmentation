@@ -1,6 +1,6 @@
-### Semi-supervised segmentation of 3D meshes based on pretrained embeddings
+# Semi-supervised segmentation of 3D meshes based on pretrained embeddings
 
-#### Installation
+## Installation
 
 ```
 git clone https://github.com/herimor/mesh-segmentation
@@ -29,13 +29,13 @@ mesh-segmentation
       ...
 ```
 
-#### The project consists of 3 parts:
+## The project consists of 3 parts:
 
  * Feature extraction
  * Training of descriptors
  * Segmentation
  
-##### Feature extraction
+### Feature extraction
 
 Calculates various geometric surface descriptors for 3D mesh such as:
 
@@ -73,7 +73,7 @@ Implementation based on [IGL](https://libigl.github.io/libigl-python-bindings/tu
 
 The list of features inspired by the next paper: [Learning 3D Mesh Segmentation and Labeling](https://people.cs.umass.edu/~kalo/papers/LabelMeshes/)
 
-##### Training of descriptors
+### Training of descriptors
 
 Train Siamese network with Triplet loss implemented in PyTorch based on pre-calculated surface descriptors.
 After calculation of surface descriptors run the next script:
@@ -102,7 +102,7 @@ mesh-segmentation
 
 Implementation based on the next [repository](https://github.com/adambielski/siamese-triplet)
 
-##### Segmentation
+### Segmentation
 
 Segmentation of 3D mesh presented by the [Agglomerative clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html#sklearn.cluster.AgglomerativeClustering) algorithm.
 Next metrics were used for evaluation of the clustering quality:
