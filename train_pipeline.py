@@ -165,7 +165,7 @@ def train_embeddings(data_container, val_meshes, cuda, category, num_val_samples
                  n_epochs=Config.net_config['n_epochs'],
                  cuda=cuda,
                  log_interval=Config.net_config['log_interval'],
-                 metrics=(AverageNonzeroTripletsMetric()),
+                 metrics=[AverageNonzeroTripletsMetric()],
                  plot_loss_curve=True,
                  plot_interval=Config.net_config['scheduler_interval'])
 

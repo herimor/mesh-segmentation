@@ -17,7 +17,7 @@ def fit(train_loader,
         n_epochs,
         cuda,
         log_interval,
-        metrics=(),
+        metrics=[],
         plot_loss_curve=True,
         plot_interval=7,
         start_epoch=0):
