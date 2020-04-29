@@ -25,7 +25,7 @@ def calculate_category_scores(category, num_meshes=20, num_metrics=4, save=True,
     for i, mesh_num in enumerate(tqdm(range(*Config.categories_indices[category]))):
         embeddings = np.load(Config.save_path / f'data/net_embed/{mesh_num}.npy')
 
-        *_, faces, labels = parse_obj(obj_path=Config.save_path / f'data/obj/{mesh_num}.obj',
+        *_, faces, labels = parse_obj(obj_path=Config.data_path / f'obj/{mesh_num}.obj',
                                       seg_path=Config.data_path / f'seg/init/{mesh_num}.seg')
         mesh, conn_mat = calc_mesh(faces)
 
