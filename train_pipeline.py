@@ -178,7 +178,7 @@ def train_embeddings(data_container, val_meshes, cuda, category, num_val_samples
     if save:
         losses_path = Config.save_path / f'data/loss_curve'
         losses_path.mkdir(parents=True, exist_ok=True)
-        np.save(losses_path / f"{category}_{'_'.join(val_meshes)}", losses)
+        np.save(losses_path / f"{category}_{'_'.join(map(str, val_meshes))}", losses)
 
         (Config.save_path / 'trained_models').mkdir(parents=True, exist_ok=True)
         torch.save(model.state_dict(), str(
