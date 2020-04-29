@@ -20,8 +20,10 @@ def calculate_category_scores(category, num_meshes=20, num_metrics=4, save=True,
     if save:
         (Config.save_path / 'data/seg/pred').mkdir(parents=True, exist_ok=True)
 
+    assert (Config.save_path / 'data/net_embed').exists(), 'Compute siamese net embedding before testing'
+
     for i, mesh_num in enumerate(tqdm(range(*Config.categories_indices[category]))):
-        embeddings = np.load(f'data/net_embed/{mesh_num}.npy')
+        embeddings = np.load(Config.save_path / f'data/net_embed/{mesh_num}.npy')
 
         *_, faces, labels = parse_obj(obj_path=Config.save_path / f'data/obj/{mesh_num}.obj',
                                       seg_path=Config.data_path / f'seg/init/{mesh_num}.seg')

@@ -79,7 +79,7 @@ def load_data(category: str = 'chair', verbose: bool = True):
 def get_indices(val_meshes, len_descriptors, num_faces, num_val_samples, category):
     min_category_index = Config.categories_indices[category][0]
     val_meshes[1] += num_val_samples - 1
-    start, stop = (val_meshes % min_category_index) * num_faces
+    start, stop = (val_meshes - min_category_index) * num_faces
     val_meshes[1] -= num_val_samples - 1
 
     val_indices = range(start, stop)
